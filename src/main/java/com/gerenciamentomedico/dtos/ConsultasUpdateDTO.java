@@ -16,7 +16,6 @@ public record ConsultasUpdateDTO(
         UUID medicoId,
 
         @Schema(description = "Data e hora da consulta", example = "dd/mm/aaaa")
-        //@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
         @JsonFormat(pattern = "dd-MM-yyyy HH:mm", timezone = "America/Sao_Paulo")
         LocalDateTime dataHoraConsulta
 
