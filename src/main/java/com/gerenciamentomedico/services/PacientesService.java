@@ -40,6 +40,11 @@ public class PacientesService {
     }
 
     public Pacientes addPacientes(Pacientes paciente) {
+        String cpfLimpo = paciente.getCpf().replaceAll("[^0-9]", "");
+        String contatoLimpo = paciente.getContato().replaceAll("[^0-9]", "");
+        paciente.setCpf(cpfLimpo);
+        paciente.setContato(contatoLimpo);
+
         return pacientesRepository.save(paciente);
     }
 
@@ -51,7 +56,9 @@ public class PacientesService {
             paciente.setNome(pacienteDetails.nome());
         }
         if (pacienteDetails.cpf() != null && !pacienteDetails.cpf().isEmpty()) {
-            if (!CPFUtils.isValidCPF(pacienteDetails.cpf())) {
+            String cpfLimpo = pacienteDetails.cpf().replaceAll("[^0-9]", "");
+
+            if (!CPFUtils.isValidCPF(cpfLimpo)) {
                 throw new BadRequestException("Por favor insira um CPF válido.");
             }
 
@@ -60,18 +67,19 @@ public class PacientesService {
                 throw new ConflictException("Já existe um paciente com esse CPF cadastrado.");
             }
 
-            paciente.setCpf(pacienteDetails.cpf());
+            paciente.setCpf(cpfLimpo);
         }
         if (pacienteDetails.dataDeNascimento() != null) {
             paciente.setDataDeNascimento(pacienteDetails.dataDeNascimento());
 
         }
         if (pacienteDetails.contato() != null && !pacienteDetails.contato().isEmpty()) {
-            boolean contatoExiste = pacientesRepository.existsByContatoAndIdNot(pacienteDetails.contato(), id);
+            String contatoLimpo = pacienteDetails.contato().replaceAll("[^0-9]", "");
+            boolean contatoExiste = pacientesRepository.existsByContatoAndIdNot(contatoLimpo, id);
             if (contatoExiste) {
                 throw new ConflictException("Já existe um paciente com esse número de contato cadastrado.");
             }
-            paciente.setContato(pacienteDetails.contato());
+            paciente.setContato(contatoLimpo);
         }
 
         return pacientesRepository.save(paciente);
