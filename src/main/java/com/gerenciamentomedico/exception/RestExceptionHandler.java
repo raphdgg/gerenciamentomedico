@@ -80,8 +80,9 @@ public class RestExceptionHandler /*extends ResponseEntityExceptionHandler*/ {
 
         if (errorMessage != null && errorMessage.contains("Failed to deserialize java.time.LocalDate")) {
             errors.put("message", "Formato de data inválido. Utilize o formato dd-MM-yyyy.");
-        } else {
-            errors.put("message", "Erro de parsing de dados.");
+        }
+        if(errorMessage != null && errorMessage.contains("Cannot deserialize value of type `java.util.UUID`")) {
+            errors.put("message", "O id inserido não é um UUID.");
         }
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);

@@ -1,9 +1,9 @@
 package com.gerenciamentomedico.services;
 
+import com.gerenciamentomedico.dtos.ConsultasUpdateDTO;
 import com.gerenciamentomedico.entities.consultas.Consultas;
 import com.gerenciamentomedico.entities.users.Medicos;
 import com.gerenciamentomedico.entities.users.Pacientes;
-import com.gerenciamentomedico.dtos.ConsultasUpdateDTO;
 import com.gerenciamentomedico.exception.exceptions.BadRequestException;
 import com.gerenciamentomedico.exception.exceptions.ConflictException;
 import com.gerenciamentomedico.exception.exceptions.NotFoundException;
@@ -44,7 +44,7 @@ public class ConsultasService {
     }
 
     public Consultas getConsultasById(UUID id) {
-        return consultasRepository.findById(id).orElseThrow(() -> new NotFoundException());
+        return consultasRepository.findById(id).orElseThrow(() -> new NotFoundException("Consulta não encontrada com o id: " + id));
     }
 
     public Consultas addConsultas(Consultas consulta) {

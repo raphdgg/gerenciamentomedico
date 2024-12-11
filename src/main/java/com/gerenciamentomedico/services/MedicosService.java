@@ -1,7 +1,7 @@
 package com.gerenciamentomedico.services;
 
-import com.gerenciamentomedico.entities.users.Medicos;
 import com.gerenciamentomedico.dtos.MedicosUpdateDTO;
+import com.gerenciamentomedico.entities.users.Medicos;
 import com.gerenciamentomedico.exception.exceptions.BadRequestException;
 import com.gerenciamentomedico.exception.exceptions.ConflictException;
 import com.gerenciamentomedico.exception.exceptions.NotFoundException;

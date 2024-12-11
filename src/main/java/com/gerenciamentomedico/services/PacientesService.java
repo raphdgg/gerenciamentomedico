@@ -1,10 +1,10 @@
 package com.gerenciamentomedico.services;
 
+import com.gerenciamentomedico.dtos.PacientesUpdateDTO;
 import com.gerenciamentomedico.entities.users.Pacientes;
 import com.gerenciamentomedico.exception.exceptions.BadRequestException;
 import com.gerenciamentomedico.exception.exceptions.ConflictException;
 import com.gerenciamentomedico.exception.exceptions.NotFoundException;
-import com.gerenciamentomedico.dtos.PacientesUpdateDTO;
 import com.gerenciamentomedico.repository.PacientesRepository;
 import com.gerenciamentomedico.utils.CPFUtils;
 import jakarta.transaction.Transactional;
