@@ -31,7 +31,7 @@ public class MedicosController {
     @Operation(summary = "Lista todos os médicos cadastrados", description = "Este endpoint retorna uma lista com todos os médicos cadastrados e ativos")
     @GetMapping
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Lista de médicos feita com sucesso", content = @Content(examples = @ExampleObject(value = "[{\"id\":\"ba362111-3292-4866-849b-fde163dd399d\",\"dataDeCriacao\":\"05-12-2024 08:47:39\",\"active\": true\",\"nome\": \"Nome Completo\",\"especialidade\": \"Especialidade\",\"crm\": \"000000-UF\",\"email\": \"example@email.com\"}]"))),
+            @ApiResponse(responseCode = "200", description = "Cadastro do médico atualizado", content = @Content(examples = @ExampleObject(value = "[{\"id\":\"ba362111-3292-4866-849b-fde163dd399d\",\n\"dataDeCriacao\":\"05-12-2024 08:47:39\",\n\"active\": true\",\n\"nome\": \"Nome Completo\",\n\"especialidade\": \"Especialidade\",\n\"crm\": \"000000-UF\",\n\"email\": \"example@email.com\"}]"))),
             @ApiResponse(responseCode = "400", description = "Dados inválidos", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"BAD_REQUEST\",\n\"message\":\"Não foram encontrados médicos cadastrados para parâmetro escolhido.\"}]"))),
             @ApiResponse(responseCode = "404", description = "Médico não encontrado", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"NOT_FOUND\",\n\"message\":\"Não foram encontrados médicos cadastrados para parâmetro escolhido.\"}]"))),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"INTERNAL_SERVER_ERROR\",\n\"message\":\"Ocorreu um erro inesperado.\"}]")))
@@ -44,7 +44,7 @@ public class MedicosController {
     @Operation(summary = "Busca um médico pelo seu ID", description = "Este endpoint retorna um médico específico com base no ID")
     @GetMapping("/{id}")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Médico encontrado", content = @Content(examples = @ExampleObject(value = "[{\"id\":\"ba362111-3292-4866-849b-fde163dd399d\",\"dataDeCriacao\":\"05-12-2024 08:47:39\",\"active\": true\",\"nome\": \"Nome Completo\",\"especialidade\": \"Especialidade\",\"crm\": \"000000-UF\",\"email\": \"example@email.com\"}]"))),
+            @ApiResponse(responseCode = "200", description = "Cadastro do médico atualizado", content = @Content(examples = @ExampleObject(value = "[{\"id\":\"ba362111-3292-4866-849b-fde163dd399d\",\n\"dataDeCriacao\":\"05-12-2024 08:47:39\",\n\"active\": true\",\n\"nome\": \"Nome Completo\",\n\"especialidade\": \"Especialidade\",\n\"crm\": \"000000-UF\",\n\"email\": \"example@email.com\"}]"))),
             @ApiResponse(responseCode = "400", description = "Dados inválidos", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"BAD_REQUEST\",\n\"message\":\"O valor inserido no campo ID não é um UUID\"}]"))),
             @ApiResponse(responseCode = "404", description = "Médico não encontrado", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"NOT_FOUND\",\n\"message\":\"Não foi encontrado nenhum médico com o id: <id>\"}]"))),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"INTERNAL_SERVER_ERROR\",\n\"message\":\"Ocorreu um erro inesperado.\"}]")))
@@ -57,7 +57,7 @@ public class MedicosController {
     @Operation(summary = "Cria um novo médico", description = "Este endpoint criará um novo médico")
     @PostMapping
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Médico cadastrado com sucesso", content = @Content(examples = @ExampleObject(value = "[{\"id\":\"ba362111-3292-4866-849b-fde163dd399d\",\"dataDeCriacao\":\"05-12-2024 08:47:39\",\"active\": true\",\"nome\": \"Nome Completo\",\"especialidade\": \"Especialidade\",\"crm\": \"000000-UF\",\"email\": \"example@email.com\"}]"))),
+            @ApiResponse(responseCode = "200", description = "Cadastro do médico atualizado", content = @Content(examples = @ExampleObject(value = "[{\"id\":\"ba362111-3292-4866-849b-fde163dd399d\",\n\"dataDeCriacao\":\"05-12-2024 08:47:39\",\n\"active\": true\",\n\"nome\": \"Nome Completo\",\n\"especialidade\": \"Especialidade\",\n\"crm\": \"000000-UF\",\n\"email\": \"example@email.com\"}]"))),
             @ApiResponse(responseCode = "400", description = "Dados inválidos", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"BAD_REQUEST\",\n\"message\":\"O campo nome não pode ser vazio ou conter números.\"}]"))),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"INTERNAL_SERVER_ERROR\",\n\"message\":\"Ocorreu um erro inesperado.\"}]")))
     })
@@ -69,7 +69,7 @@ public class MedicosController {
     @Operation(summary = "Atualiza as informações do médico", description = "Este endpoint atualiza as informações de um médico em específico com base no ID")
     @PutMapping("/{id}")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Cadastro do médico atualizado", content = @Content(examples = @ExampleObject(value = "[{\"id\":\"ba362111-3292-4866-849b-fde163dd399d\",\"dataDeCriacao\":\"05-12-2024 08:47:39\",\"active\": true\",\"nome\": \"Nome Completo\",\"especialidade\": \"Especialidade\",\"crm\": \"000000-UF\",\"email\": \"example@email.com\"}]"))),
+            @ApiResponse(responseCode = "200", description = "Cadastro do médico atualizado", content = @Content(examples = @ExampleObject(value = "[{\"id\":\"ba362111-3292-4866-849b-fde163dd399d\",\n\"dataDeCriacao\":\"05-12-2024 08:47:39\",\n\"active\": true\",\n\"nome\": \"Nome Completo\",\n\"especialidade\": \"Especialidade\",\n\"crm\": \"000000-UF\",\n\"email\": \"example@email.com\"}]"))),
             @ApiResponse(responseCode = "400", description = "Dados inválidos", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"BAD_REQUEST\",\n\"message\":\"O CRM deve seguir o formato '000000-UF', com 4 a 6 dígitos seguidos por um hífen e a sigla do estado em letras maiúsculas.\"}]"))),
             @ApiResponse(responseCode = "404", description = "Médico não encontrado", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"NOT_FOUND\",\n\"message\":\"Não foi encontrado nenhum médico com o id: <id>\"}]"))),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content(examples = @ExampleObject(value = "[{\"status\":\"INTERNAL_SERVER_ERROR\",\n\"message\":\"Ocorreu um erro inesperado.\"}]")))
