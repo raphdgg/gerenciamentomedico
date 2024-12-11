@@ -10,15 +10,17 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Arrays;
 
 @Configuration
+
 public class SpringDocConfig {
 
     @Bean
-    public OpenAPI openApi(){
+    public OpenAPI openApi() {
         return new OpenAPI()
+
                 .info(new Info()
                         .title("API para o gerenciamento de cadastros médicos")
                         .version("v1")
-                        .description("REST API test")
+                        .description("REST API para cadastro de pacientes")
 
                 )
                 .externalDocs(new ExternalDocumentation()
@@ -33,4 +35,6 @@ public class SpringDocConfig {
                         )
                 );
     }
+
+
 }
